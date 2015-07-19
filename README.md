@@ -37,3 +37,9 @@ About
 
 A couple years back, I worked on a project where I needed to hook up a Java server to the PTSN somehow and overlay the audio data with small fragments on my own. After that, the audio data from the PSTN should be Speex encoded and sent over WebSockets to a client.
 The easiest solution at the time seemed the IAX2 protocol, which only makes use of a single UDP port for transmitting call control messages as well as audio data. Since all Java-based IAX2 libraries I found at the time were based on the assumption that you wanted to record audio data from a mic and play it through the speaker, I decided to write my own based on the RFC. I only needed outgoing calls and always connected to the same Asterisk server on the same box as the Java machine. So I choose uncompressed (RAW) audio data as my preferred codec. The system has been working well since 2011, but there still are some bugs in there that haven't been worth fixing.
+
+The Name
+--------
+
+Before I wrote this library, I took a good look at [njiax](https://code.google.com/p/njiax/), thinking I could maybe adapt that to my needs. But turned out that was too complicated, so I opted for the rewrite. Since I sniffed around in their code a lot, I at least wanted to give them credit somehow. Thus, djiax.
+
